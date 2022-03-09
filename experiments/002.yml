@@ -1,0 +1,2 @@
+trainer:
+  logger: True

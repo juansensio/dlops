@@ -1,0 +1,11 @@
+logger: WandbLogger
+logger_params:
+  project: dlops-mnist
+  name: "005"
+callbacks:
+  - name: WandBCallback
+    lib: src.utils
+    params:
+      labels:
+        - "no 3"
+        - "3"

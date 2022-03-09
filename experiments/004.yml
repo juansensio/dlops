@@ -1,0 +1,4 @@
+logger: WandbLogger
+logger_params:
+  project: dlops-mnist
+  name: "004"

@@ -1,0 +1,4 @@
+logger: CSVLogger
+logger_params:
+  save_dir: logs
+  name: "003"

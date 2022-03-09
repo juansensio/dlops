@@ -29,6 +29,7 @@ class MNISTModule(pl.LightningModule):
         loss = F.binary_cross_entropy_with_logits(y_hat, y.float())
         preds = torch.sigmoid(y_hat) > 0.5
         acc = (preds.long() == y).float().mean()
+        self.log('loss', loss)
         self.log('acc', acc, prog_bar=True)
         return loss
 

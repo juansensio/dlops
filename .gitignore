@@ -1,2 +1,6 @@
 dataset
 dlops_key.json
+lightning_logs
+wandb
+checkpoints
+logs
