@@ -10,4 +10,4 @@ RUN conda install -y -c conda-forge \
 COPY ./models /models
 COPY ./app.py /app.py
 
-CMD uvicorn app:app --host=0.0.0.0 --port=80
+CMD uvicorn app:app --host=0.0.0.0 --port=$PORT
