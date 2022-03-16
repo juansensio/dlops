@@ -5,3 +5,4 @@ wandb
 checkpoints
 logs
 models
+__pycache__
