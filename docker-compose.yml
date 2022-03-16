@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  dlops-api:
+    build: 
+      context: .
+      dockerfile: Dockerfile.dev
+    image: dlops-api
+    container_name: dlops-api
+    ports:
+      - 8000:8000
+    volumes:
+      - ./app.py:/app.py
+    command: uvicorn app:app --reload --host=0.0.0.0

@@ -1,0 +1,10 @@
+FROM continuumio/miniconda3
+
+RUN conda install -y -c conda-forge \ 
+    pillow \
+    onnxruntime \
+    fastapi \ 
+    uvicorn \
+    python-multipart 
+
+COPY ./models /models
