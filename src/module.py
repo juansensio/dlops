@@ -9,10 +9,11 @@ class MNISTModule(pl.LightningModule):
         super().__init__()
         self.save_hyperparameters(cfg)
         layers = self.hparams.layers if 'layers' in self.hparams else [100]
+        layer = lambda h: nn.Sequential(nn.Linear(layers[h], layers[h+1]), nn.ReLU())
         self.mlp = nn.Sequential(
             nn.Linear(28 * 28, layers[0]),
             nn.ReLU(),
-            *[lambda h: nn.Sequential(nn.Linear(layers(h), layers(h+1)), nn.ReLU()) for h in range(len(layers)-1)],
+            *[layer(h) for h in range(len(layers)-1)],
             nn.Linear(layers[-1], 1)
         )
         
